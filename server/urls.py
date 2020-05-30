@@ -17,18 +17,15 @@ from django.urls import include, path, re_path
 from django.views.generic import TemplateView
 from health_check import urls as health_urls
 
-from server.apps.main import urls as main_urls
-from server.apps.main.views import index
-
 admin.autodiscover()
 
 
 urlpatterns = [
-    # Apps:
-    path('main/', include(main_urls, namespace='main')),
-
     # Health checks:
     path('health/', include(health_urls)),  # noqa: DJ05
+
+    # JET Django API
+    path('jet_api/', include('jet_django.urls')),
 
     # Jet Dashboard
     re_path(r'^jet/', include('jet.urls', 'jet')),  # Django JET URLS
@@ -36,7 +33,7 @@ urlpatterns = [
 
     # django-admin:
     path('admin/doc/', include(admindocs_urls)),  # noqa: DJ05
-    path('admin/', admin.site.urls),
+    path('', admin.site.urls),
 
     # Text and xml static files:
     path('robots.txt', TemplateView.as_view(
@@ -47,9 +44,6 @@ urlpatterns = [
         template_name='txt/humans.txt',
         content_type='text/plain',
     )),
-
-    # It is a good practice to have explicit index view:
-    path('', index, name='index'),
 ]
 
 if settings.DEBUG:  # pragma: no cover

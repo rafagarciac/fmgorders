@@ -23,15 +23,15 @@ SECRET_KEY = config('DJANGO_SECRET_KEY')
 # Application definition:
 
 INSTALLED_APPS: Tuple[str, ...] = (
-    # Your apps go here:
-    'server.apps.main',
-
     # Default django apps:
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    # Jet Django
+    'jet_django',
 
     # Jet Dashboard
     'jet.dashboard',
@@ -54,6 +54,9 @@ INSTALLED_APPS: Tuple[str, ...] = (
 
     # Third party apps
     'django_http_referrer_policy',
+
+    # Apps
+    'app'
 )
 
 MIDDLEWARE: Tuple[str, ...] = (
@@ -204,3 +207,47 @@ FEATURE_POLICY: Dict[str, Union[str, List[str]]] = {}  # noqa: WPS234
 
 # Timeouts
 EMAIL_TIMEOUT = 5
+
+
+# Jet Django
+JET_PROJECT = 'fruteria_mg'
+JET_TOKEN = '4105f1d0-8868-4d80-9c76-fc55b6b1d250'
+
+# DJango JET
+JET_DEFAULT_THEME = 'light-gray'
+JET_THEMES = [
+    {
+        'theme': 'default', # theme folder name
+        'color': '#47bac1', # color of the theme's button in user menu
+        'title': 'Default' # theme title
+    },
+    {
+        'theme': 'green',
+        'color': '#44b78b',
+        'title': 'Green'
+    },
+    {
+        'theme': 'light-green',
+        'color': '#2faa60',
+        'title': 'Light Green'
+    },
+    {
+        'theme': 'light-violet',
+        'color': '#a464c4',
+        'title': 'Light Violet'
+    },
+    {
+        'theme': 'light-blue',
+        'color': '#5EADDE',
+        'title': 'Light Blue'
+    },
+    {
+        'theme': 'light-gray',
+        'color': '#222',
+        'title': 'Light Gray'
+    }
+]
+JET_SIDE_MENU_COMPACT = True
+JET_CHANGE_FORM_SIBLING_LINKS = True
+JET_INDEX_DASHBOARD = 'jet.dashboard.dashboard.DefaultIndexDashboard'
+JET_APP_INDEX_DASHBOARD = 'jet.dashboard.dashboard.DefaultAppIndexDashboard'

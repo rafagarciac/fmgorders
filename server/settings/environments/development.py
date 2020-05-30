@@ -83,6 +83,7 @@ NPLUSONE_LOGGER = logging.getLogger('django')
 NPLUSONE_LOG_LEVEL = logging.WARN
 NPLUSONE_WHITELIST = [
     {'model': 'admin.*'},
+    {'model': 'app.*'},
 ]
 
 
@@ -92,4 +93,6 @@ NPLUSONE_WHITELIST = [
 # Set of badly named migrations to ignore:
 DTM_IGNORED_MIGRATIONS = frozenset((
     ('axes', '*'),
+    ('jet_django', '*'),
+    ('app', '*'),
 ))
