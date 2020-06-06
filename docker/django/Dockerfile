@@ -71,7 +71,7 @@ RUN echo "$DJANGO_ENV" \
 COPY ./docker/django/entrypoint.sh /docker-entrypoint.sh
 
 # Staticfiles
-RUN mkdir /var/www/django/static \
+RUN mkdir -p /var/www/django/static \
   && chown web:web -R /var/www/django/static
 
 # Setting up proper permissions:
