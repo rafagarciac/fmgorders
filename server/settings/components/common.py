@@ -208,11 +208,6 @@ FEATURE_POLICY: Dict[str, Union[str, List[str]]] = {}  # noqa: WPS234
 # Timeouts
 EMAIL_TIMEOUT = 5
 
-
-# Jet Django
-JET_PROJECT = 'fruteria_mg'
-JET_TOKEN = '4105f1d0-8868-4d80-9c76-fc55b6b1d250'
-
 # DJango JET
 JET_DEFAULT_THEME = 'light-gray'
 JET_THEMES = [

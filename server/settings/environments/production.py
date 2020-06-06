@@ -74,3 +74,7 @@ SECURE_REDIRECT_EXEMPT = [
 
 SESSION_COOKIE_SECURE = True
 CSRF_COOKIE_SECURE = True
+
+# JetAdmin
+JET_PROJECT = 'fruteria_mg_prod'
+JET_TOKEN = '60248d04-201f-4de8-ba46-ddea7cd96a1c'

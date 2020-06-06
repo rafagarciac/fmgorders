@@ -96,3 +96,7 @@ DTM_IGNORED_MIGRATIONS = frozenset((
     ('jet_django', '*'),
     ('app', '*'),
 ))
+
+# JetAdmin
+JET_PROJECT = 'fruteria_mg'
+JET_TOKEN = '4105f1d0-8868-4d80-9c76-fc55b6b1d250'
