@@ -14,10 +14,9 @@ done
 # It is also possible to wait for other services as well: redis, elastic, mongo
 >&2 echo 'MySQL is up - continuing...'
 
-# TODO
-# Collect static files
-# echo "Collect static files"
-# python manage.py collectstatic --noinput
+# Collect Static
+echo "Apply Collectstatic"
+python manage.py collectstatic --no-input
 
 # Apply database migrations
 echo "Apply database migrations"
