@@ -70,14 +70,14 @@ RUN echo "$DJANGO_ENV" \
 # This is a special case. We need to run this script as an entry point:
 COPY ./docker/django/entrypoint.sh /docker-entrypoint.sh
 
-# Staticfiles
-RUN mkdir -p /var/www/django/static \
-  && chown web:web -R /var/www/django/static
-
 # Setting up proper permissions:
 RUN chmod +x '/docker-entrypoint.sh' \
   && groupadd -r web && useradd -d /code -r -g web web \
   && chown web:web -R /code
+
+# Staticfiles
+RUN mkdir -p /var/www/django/static \
+  && chown web:web -R /var/www/django/static
 
 # Running as non-root user:
 USER web
